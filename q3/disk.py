@@ -54,4 +54,5 @@ if __name__ == '__main__':
     d = Disk("lol")
     d.showdisk()
     l = input()
+    d.cleardisk()
 
