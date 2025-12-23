@@ -19,13 +19,14 @@ def drawrect(t,x,y,w,h):
 
 
 class Disk(object):
-    def __init__(self,name="",xpos=0,ypos=0,height=20,width=40):
+    def __init__(self,name="",xpos=0,ypos=0,height=20,width=80):
         self.dname = name
         self.dxpos = xpos
         self.dypos = ypos
         self.dheight = height
         self.dwidth = width
         self.t = Turtle()
+        self.t.penup()
     def showdisk(self):
         
         self.t.goto(self.dxpos,self.dypos)
@@ -51,8 +52,10 @@ class Disk(object):
         self.t.clear()
 
 if __name__ == '__main__':
-    d = Disk("lol")
+    d = Disk("lol",0,0,20,40)
     d.showdisk()
+    g = Disk("juan",0,20,20,80)
+    g.showdisk()
     l = input()
     d.cleardisk()
 
