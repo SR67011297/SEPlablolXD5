@@ -15,6 +15,7 @@ class Pole(object):
         p.penup()
         p.goto(self.pxpos, self.pypos)
         p.pendown()
+        turtle.speed(10)
 
         p.setheading(0)
         p.forward(self.pthick/2)
@@ -26,15 +27,25 @@ class Pole(object):
         p.forward(self.plength)
         p.setheading(0)
         p.forward(self.pthick/2)
+        p.penup()
 
-        turtle.done()
+        #turtle.done()
 
     def pushdisk(self, disk):
         # end of the list is the top
+
+        disk.cleardisk()
+        disk.newpos(self.pxpos, self.pypos+(len(self.stack)*disk.dheight))
+        disk.showdisk()
         self.stack.append(disk)
+        #self.stack[-1].showdisk()
 
     def popdisk(self):
+        self.stack[-1].newpos(self.pxpos, self.pypos-self.plength-20)
+        self.stack[-1].cleardisk()
+        self.stack[-1].showdisk()
         return self.stack.pop()
+        
         
 if __name__ == "__main__":
     Pole().showpole()
