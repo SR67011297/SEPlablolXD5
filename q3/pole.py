@@ -41,7 +41,7 @@ class Pole(object):
         #self.stack[-1].showdisk()
 
     def popdisk(self):
-        self.stack[-1].newpos(self.pxpos, self.pypos-self.plength-20)
+        self.stack[-1].newpos(self.pxpos, self.pypos+self.plength+20)
         self.stack[-1].cleardisk()
         self.stack[-1].showdisk()
         return self.stack.pop()
